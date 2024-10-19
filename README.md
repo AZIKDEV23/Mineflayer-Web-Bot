@@ -1,0 +1,2 @@
+# MineflayerWebBot
+ Web mineflayer bot
