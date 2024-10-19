@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Londrina+Sketch&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  font-family: "Nunito", sans-serif;
+}
+
+body{
+  height: 100vh;
+}
+
+#loginBox{
+  width: 30%;
+  height: 30%;
+}
+

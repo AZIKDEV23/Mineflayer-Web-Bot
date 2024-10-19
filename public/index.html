@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Minecraft Bot Login</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="loginBox">
+      <div id="loginHeader">
+        <h2>Mineflayer Bot</h2>
+      </div>
+      <div id="formBox">
+        <form id="loginForm">
+          <div id="serverInfo">
+            <div id="host">
+              <label for="server">Host</label>
+              <input type="text" id="server" required />
+            </div>
+            <div id="port">
+              <label for="port">Port</label>
+              <input type="text" id="port" required />
+            </div>
+          </div>
+          <div id="botInfo">
+            <div id="username">
+              <label for="username">Username</label>
+              <input type="text" id="username" required />
+            </div>
+            <div id="ver">
+              <select name="ver" id="version">
+                <option value="">Versiyani tanlang</option>
+                <option value="1.18">1.18</option>
+                <option value="1.18">1.17</option>
+                <option value="1.18">1.16</option>
+              </select>
+            </div>
+          </div>
+          <div id="loginBtnBox">
+            <button type="submit" id="reconnectBtn">Reconnect</button>
+            <button type="submit" id="startBtn">Start</button>
+            <button type="submit" id="quitBtn">Quit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
