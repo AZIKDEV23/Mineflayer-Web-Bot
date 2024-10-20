@@ -8,11 +8,13 @@
   </head>
   <body>
     <div class="loginBox">
-      <h1 class="color">Mineflayer Bot</h1>
+      <div class="loginHeader">
+        <h1 class="color">Mineflayer Bot</h1>
+      </div>
       <form id="connectionForm">
         <div class="inpBox">
           <div class="serverInfo">
-            <div class="host">
+            <div class="host gap">
               <label for="host" class="color">Host</label>
               <input
                 type="text"
@@ -23,7 +25,7 @@
                 title="Server Host"
               />
             </div>
-            <div class="port">
+            <div class="port gap">
               <label for="port" class="color">Port</label>
               <input
                 type="text"
@@ -36,7 +38,7 @@
             </div>
           </div>
           <div class="botInfo">
-            <div class="username">
+            <div class="username gap">
               <label for="username" class="color">Username</label>
               <input
                 type="text"
@@ -47,7 +49,7 @@
                 title="Bot Username"
               />
             </div>
-            <div class="version">
+            <div class="version gap">
               <label for="version" class="color">Version</label>
               <select name="version" id="version">
                 <option value="1.20">1.20</option>
