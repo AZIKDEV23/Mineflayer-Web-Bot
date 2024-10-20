@@ -1,8 +1,21 @@
 {
+  "version": 2,
+  "builds": [
+    {
+      "src": "app.js",
+      "use": "@vercel/node"
+    }
+  ],
   "routes": [
     {
       "src": "/connect",
-      "dest": "/"
+      "methods": ["POST"],
+      "dest": "/app.js"
+    },
+    {
+      "src": "/disconnect",
+      "methods": ["POST"],
+      "dest": "/app.js"
     }
   ]
 }
