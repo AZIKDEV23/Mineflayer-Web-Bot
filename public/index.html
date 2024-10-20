@@ -1,94 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Minecraft Server Connection</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <div class="loginBox">
-        <h1 class="color">Mineflayer Bot</h1>
-        <form id="connectionForm">
-            <div class="inpBox">
-                <div class="serverInfo">
-                    <div class="host">
-                        <label for="host" class="color">Host</label>
-                        <input type="text" id="host" name="host" required placeholder="Hostni kiriting" title="Server Host">
-                    </div>
-                    <div class="port">
-                        <label for="port" class="color">Port</label>
-                        <input type="text" id="port" name="port" required placeholder="Portni kiriting" title="Server Port">
-                    </div>
-                </div>
-                <div class="botInfo">
-                    <div class="username">
-                        <label for="username" class="color">Username</label>
-                        <input type="text" id="username" name="username" required placeholder="Usernameni kiriting" title="Bot Username">
-                    </div>
-                    <div class="version">
-                        <label for="version" class="color">Version</label>
-                        <select name="version" id="version">
-                            <option value="1.20">1.20</option>
-                            <option value="1.18">1.18</option>
-                            <option value="1.17">1.17</option>
-                        </select>
-                    </div>
-                </div>
+      <h1 class="color">Mineflayer Bot</h1>
+      <form id="connectionForm">
+        <div class="inpBox">
+          <div class="serverInfo">
+            <div class="host">
+              <label for="host" class="color">Host</label>
+              <input
+                type="text"
+                id="host"
+                name="host"
+                required
+                placeholder="Hostni kiriting"
+                title="Server Host"
+              />
             </div>
-            <div class="btnBox">
-                <button type="button" id="reconnected">Reconnected</button>
-                <button type="button" id="start">Start</button>
-                <button type="button" id="quit">Quit</button>
+            <div class="port">
+              <label for="port" class="color">Port</label>
+              <input
+                type="text"
+                id="port"
+                name="port"
+                required
+                placeholder="Portni kiriting"
+                title="Server Port"
+              />
             </div>
-        </form>
+          </div>
+          <div class="botInfo">
+            <div class="username">
+              <label for="username" class="color">Username</label>
+              <input
+                type="text"
+                id="username"
+                name="username"
+                required
+                placeholder="Usernameni kiriting"
+                title="Bot Username"
+              />
+            </div>
+            <div class="version">
+              <label for="version" class="color">Version</label>
+              <select name="version" id="version">
+                <option value="1.20">1.20</option>
+                <option value="1.18">1.18</option>
+                <option value="1.17">1.17</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="btnBox">
+          <button type="button" id="reconnected">Reconnected</button>
+          <button type="button" id="start">Start</button>
+          <button type="button" id="quit">Quit</button>
+        </div>
+      </form>
     </div>
-    <script>
-        let bot;
-
-        document.getElementById("start").addEventListener("click", async function (event) {
-            event.preventDefault();
-
-            const host = document.getElementById("host").value;
-            const port = document.getElementById("port").value;
-            const username = document.getElementById("username").value;
-            const version = document.getElementById("version").value;
-
-            const response = await fetch("/connect", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify({ host, port, username, version }),
-            });
-
-            const result = await response.json();
-            console.log(result.message);
-
-            if (result.success) {
-                bot = true; // Bot muvaffaqiyatli ulanishni bildiradi
-                document.querySelector('.color').style.color = 'green'; // Tugma rangini yashilga o'zgartirish
-            }
-        });
-
-        document.getElementById("quit").addEventListener("click", async function () {
-            if (bot) {
-                const response = await fetch("/disconnect", {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json",
-                    },
-                });
-
-                const result = await response.json();
-                console.log(result.message);
-
-                bot = false; // Bot ulanishni tugatganini bildiradi
-                document.querySelector('.color').style.color = 'red'; // Tugma rangini qizilga o'zgartirish
-            } else {
-                console.log("Bot hali ulanishni boshlamagan.");
-            }
-        });
-    </script>
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>
