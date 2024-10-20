@@ -1,15 +1,12 @@
 let bot;
-
 document
   .getElementById("start")
   .addEventListener("click", async function (event) {
     event.preventDefault();
-
     const host = document.getElementById("host").value;
     const port = document.getElementById("port").value;
     const username = document.getElementById("username").value;
     const version = document.getElementById("version").value;
-
     const response = await fetch("/connect", {
       method: "POST",
       headers: {
@@ -18,12 +15,21 @@ document
       body: JSON.stringify({ host, port, username, version }),
     });
 
-    const result = await response.json();
-    console.log(result.message);
+    if (!response.ok) {
+      console.error("Server xatosi:", response.statusText);
+      return;
+    }
 
-    if (result.success) {
-      bot = true; // Bot muvaffaqiyatli ulanishni bildiradi
-      document.querySelector(".color").style.color = "green"; // Tugma rangini yashilga o'zgartirish
+    const result = await response.json().catch((err) => {
+      console.error("JSON parse xatosi:", err);
+    });
+
+    if (result && result.message) {
+      console.log(result.message);
+      if (result.success) {
+        bot = true;
+        document.querySelector(".color").style.color = "green";
+      }
     }
   });
 
@@ -36,11 +42,20 @@ document.getElementById("quit").addEventListener("click", async function () {
       },
     });
 
-    const result = await response.json();
-    console.log(result.message);
+    if (!response.ok) {
+      console.error("Server xatosi:", response.statusText);
+      return;
+    }
 
-    bot = false; // Bot ulanishni tugatganini bildiradi
-    document.querySelector(".color").style.color = "red"; // Tugma rangini qizilga o'zgartirish
+    const result = await response.json().catch((err) => {
+      console.error("JSON parse xatosi:", err);
+    });
+
+    if (result && result.message) {
+      console.log(result.message);
+      bot = false;
+      document.querySelector(".color").style.color = "red";
+    }
   } else {
     console.log("Bot hali ulanishni boshlamagan.");
   }

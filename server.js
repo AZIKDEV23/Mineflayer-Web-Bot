@@ -1,10 +1,8 @@
 const express = require("express");
 const mineflayer = require("mineflayer");
 const bodyParser = require("body-parser");
-
 const app = express();
 const PORT = process.env.PORT || 3000;
-
 let bot;
 
 app.use(express.static("public"));
@@ -12,7 +10,6 @@ app.use(bodyParser.json());
 
 app.post("/connect", (req, res) => {
   const { host, port, username, version } = req.body;
-
   bot = mineflayer.createBot({
     host: host,
     port: parseInt(port),
