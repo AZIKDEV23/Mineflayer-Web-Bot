@@ -10,12 +10,12 @@
     {
       "src": "/connect",
       "methods": ["POST"],
-      "dest": "/app.js"
+      "dest": "/server.js"
     },
     {
       "src": "/disconnect",
       "methods": ["POST"],
-      "dest": "/app.js"
+      "dest": "/server.js"
     }
   ]
 }
