@@ -17,5 +17,9 @@
       "methods": ["POST"],
       "dest": "/server.js"
     }
+    {
+      "src": "/",
+      "dest": "/index.html"
+    }
   ]
 }
