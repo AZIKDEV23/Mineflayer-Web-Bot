@@ -10,16 +10,16 @@
     {
       "src": "/connect",
       "methods": ["POST"],
-      "dest": "/server.js"
+      "dest": "public/server.js"
     },
     {
       "src": "/disconnect",
       "methods": ["POST"],
-      "dest": "/server.js"
+      "dest": "public/server.js"
     }
     {
       "src": "/",
-      "dest": "/index.html"
+      "dest": "public/index.html"
     }
   ]
 }
