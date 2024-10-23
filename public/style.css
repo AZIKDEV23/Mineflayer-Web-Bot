@@ -62,9 +62,10 @@ label {
 }
 
 input,
-select {
+select,
+option {
   padding: 0vw 0.6vw;
-  width: 10vw;
+  width: 12vw;
   height: 2vw;
   border: none;
   border-radius: 1vw;
@@ -76,6 +77,12 @@ select {
   flex-direction: column;
 }
 
-#version {
+/* #version {
   width: 11.2vw;
+  font-size: 1vw;
+} */
+
+.btnBox{
+  display: flex;
+  justify-content: space-around;
 }

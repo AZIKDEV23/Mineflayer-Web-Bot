@@ -1,71 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Minecraft Server Connection</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <div class="loginBox">
-      <div class="loginHeader">
-        <h1 class="color">Mineflayer Bot</h1>
-      </div>
-      <form id="connectionForm">
-        <div class="inpBox">
-          <div class="serverInfo">
-            <div class="host gap">
-              <label for="host" class="color">Host</label>
-              <input
-                type="text"
-                id="host"
-                name="host"
-                required
-                placeholder="Hostni kiriting"
-                title="Server Host"
-              />
-            </div>
-            <div class="port gap">
-              <label for="port" class="color">Port</label>
-              <input
-                type="text"
-                id="port"
-                name="port"
-                required
-                placeholder="Portni kiriting"
-                title="Server Port"
-              />
-            </div>
-          </div>
-          <div class="botInfo">
-            <div class="username gap">
-              <label for="username" class="color">Username</label>
-              <input
-                type="text"
-                id="username"
-                name="username"
-                required
-                placeholder="Usernameni kiriting"
-                title="Bot Username"
-              />
-            </div>
-            <div class="version gap">
-              <label for="version" class="color">Version</label>
-              <select name="version" id="version">
-                <option value="1.20">1.20</option>
-                <option value="1.18">1.18</option>
-                <option value="1.17">1.17</option>
-              </select>
-            </div>
-          </div>
-        </div>
-        <div class="btnBox">
-          <button type="button" id="reconnected">Reconnected</button>
-          <button type="button" id="start">Start</button>
-          <button type="button" id="quit">Quit</button>
-        </div>
-      </form>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Minecraft Server Connection</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="loginBox">
+    <div class="loginHeader">
+      <h1 class="color">Mineflayer Bot</h1>
     </div>
-    <script src="script.js"></script>
-  </body>
+    <form id="connectionForm">
+      <div class="inpBox">
+        <div class="serverInfo">
+          <div class="host gap">
+            <label for="host" class="color">Host</label>
+            <input type="text" id="host" name="host" required placeholder="Hostni kiriting" title="Server Host" />
+          </div>
+          <div class="port gap">
+            <label for="port" class="color">Port</label>
+            <input type="text" id="port" name="port" required placeholder="Portni kiriting" title="Server Port" />
+          </div>
+        </div>
+        <div class="botInfo">
+          <div class="username gap">
+            <label for="username" class="color">Username</label>
+            <input type="text" id="username" name="username" required placeholder="Usernameni kiriting"
+              title="Bot Username" />
+          </div>
+          <div class="version gap">
+            <label for="version" class="color">Version</label>
+            <select name="version" id="version">
+              <option value="1.20">1.20</option>
+              <option value="1.18">1.18</option>
+              <option value="1.17">1.17</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="btnBox">
+        <button type="button" id="reconnected">Reconnected</button>
+        <button type="button" id="start">Start</button>
+        <button type="button" id="quit">Quit</button>
+      </div>
+    </form>
+  </div>
+  <script src="script.js"></script>
+</body>
+
 </html>
